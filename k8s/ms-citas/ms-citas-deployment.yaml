@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-citas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-citas
+  template:
+    metadata:
+      labels:
+        app: ms-citas
+    spec:
+      containers:
+        - name: ms-citas
+          image: pocacru/ms-citas:1.0
+          ports:
+            - containerPort: 8087

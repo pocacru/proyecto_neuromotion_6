@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-doctores
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-doctores
+  template:
+    metadata:
+      labels:
+        app: ms-doctores
+    spec:
+      containers:
+        - name: ms-doctores
+          image: pocacru/ms-doctores:1.0
+          ports:
+            - containerPort: 8086
