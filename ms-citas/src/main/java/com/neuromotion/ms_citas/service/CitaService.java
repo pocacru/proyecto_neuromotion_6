@@ -25,8 +25,8 @@ public class CitaService {
 
     public Optional<CitaDetalleDTO> obtenerDetalle(Long id) {
         return repo.findById(id).map(c -> {
-            UsuarioDTO u = rest.getForObject("http://localhost:8081/usuarios/" + c.getUsuarioId(), UsuarioDTO.class);
-            DoctorDTO d = rest.getForObject("http://localhost:8082/doctores/" + c.getDoctorId(), DoctorDTO.class);
+            UsuarioDTO u = rest.getForObject("http://localhost:8085/usuarios/" + c.getUsuarioId(), UsuarioDTO.class);
+            DoctorDTO d = rest.getForObject("http://localhost:8086/doctores/" + c.getDoctorId(), DoctorDTO.class);
             CitaDetalleDTO detalle = new CitaDetalleDTO();
             detalle.setCita(c);
             detalle.setUsuario(u);
