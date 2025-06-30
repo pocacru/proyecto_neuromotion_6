@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: ms-usuarios
-          image: pocacru/ms-usuarios:1.1
+          image: pocacru/ms-usuarios:1.0
           ports:
             - containerPort: 8085
